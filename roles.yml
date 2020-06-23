@@ -1,0 +1,7 @@
+---
+- name: multiple linux os playbook
+  hosts: all
+  user: root
+  roles:
+    - centos 
+

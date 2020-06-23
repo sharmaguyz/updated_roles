@@ -1,0 +1,9 @@
+- name: installation of apache2  package
+  apt:
+    name: apache2
+    state: latest
+  notify:
+    - start_apache2
+  tags:
+    - install
+

@@ -1,0 +1,13 @@
+---
+- name: installation of httpd package
+  yum:
+    name: httpd
+    state: latest
+  notify:
+    - start_apache
+  tags:
+    - install
+
+
+
+   

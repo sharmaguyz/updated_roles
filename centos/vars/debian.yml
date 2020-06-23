@@ -1,0 +1,17 @@
+---
+# vars file for /root/ansible/roles/apache
+#
+#apache_packages:
+#  - apache2
+
+
+#apache_services:
+#  - apache2
+
+#httpd_admin: "root@{{ ansible_fqdn }}"
+#httpd_server: "{{ ansible_fqdn }}"
+#httpd_document: '/var/www/html'
+#httpd_index: index.html
+
+
+

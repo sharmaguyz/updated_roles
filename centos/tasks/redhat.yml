@@ -1,0 +1,20 @@
+---
+- name: copy html content redhat family 
+  copy:
+    src: index.html
+    dest: '/var/www/html'
+  tags:
+    - html_copy
+- name: copy template vhost file  redhat family 
+  template:
+    src: redhat.vhost.conf.j2
+    dest: /etc/httpd/conf.d/vhost.conf
+    owner: root
+    group: root
+    mode: 0644
+  notify:
+    - restart_apache
+  tags:
+    - config
+
+

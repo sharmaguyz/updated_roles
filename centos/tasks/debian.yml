@@ -1,0 +1,19 @@
+---
+- name: copy html content debian family 
+  copy:
+    src: index.html
+    dest: '/var/www/html'
+  tags:
+    - html_copy
+- name: copy template vhost file debian family 
+  template:
+    src: debian.vhost.conf.j2 
+    dest: /etc/apache2/sites-available/vhost.conf
+    owner: root
+    group: root
+    mode: 0644
+  notify:
+    - restart_apache2
+  tags:
+    - config
+

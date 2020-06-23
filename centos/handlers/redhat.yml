@@ -1,0 +1,18 @@
+---
+# handlers file for /root/ansible/roles/apache
+#
+#
+
+- name: start_apache
+  service:
+    name: httpd
+    state: started 
+    enabled: true
+- name: restart_apache
+  service:
+    name: httpd
+    state: restarted
+    enabled: true
+
+
+
