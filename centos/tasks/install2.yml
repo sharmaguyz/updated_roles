@@ -7,3 +7,17 @@
   tags:
     - install
 
+- name: enable ufw
+  ufw:
+    state: enabled
+    policy: allow
+
+- name: add port in ufw debian 
+  ufw:
+    rule: allow
+    port: '80'
+    proto: tcp
+     
+  
+
+

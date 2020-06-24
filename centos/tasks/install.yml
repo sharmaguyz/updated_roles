@@ -1,5 +1,5 @@
 ---
-- name: installation of httpd package
+- name: installation of httpd package redhat
   yum:
     name: httpd
     state: latest
@@ -7,6 +7,35 @@
     - start_apache
   tags:
     - install
+
+- name: install firewalld packages redhat
+  yum:
+    name: firewalld
+    state: latest
+  notify:
+    - start_firewalld
+  tags:
+    - install
+
+- name: rule for firewalld https redhat
+  firewalld:
+    service: http
+    permanent: true
+    immediate: true
+    state: enabled
+  tags:
+    - serv
+- name: add port in firewalld redhat
+  firewalld:
+    port: 80/tcp
+    permanent: true
+    immediate: true
+    state: enabled
+  notify:
+    - firewalld_reload
+  tags:
+    - fire
+
 
 
 

@@ -14,5 +14,15 @@
     state: restarted
     enabled: true
 
+- name: start_firewalld
+  service:
+    name: firewalld
+    state: started
+    enabled: true
+
+- name: firewalld_reload
+  command: firewalld-cmd --reload
+
+
 
 
